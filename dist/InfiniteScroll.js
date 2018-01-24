@@ -146,23 +146,21 @@ var InfiniteScroll = (function(_Component) {
       value: function detachScrollListener() {
         var scrollEl = this.getScrollElement();
 
-        if (scrollEl) {
-          scrollEl.removeEventListener(
-            'mousewheel',
-            this.mousewheelListener,
-            this.props.useCapture,
-          );
-          scrollEl.removeEventListener(
-            'scroll',
-            this.scrollListener,
-            this.props.useCapture,
-          );
-          scrollEl.removeEventListener(
-            'resize',
-            this.scrollListener,
-            this.props.useCapture,
-          );
-        }
+        scrollEl.removeEventListener(
+          'mousewheel',
+          this.mousewheelListener,
+          this.props.useCapture,
+        );
+        scrollEl.removeEventListener(
+          'scroll',
+          this.scrollListener,
+          this.props.useCapture,
+        );
+        window.removeEventListener(
+          'resize',
+          this.scrollListener,
+          this.props.useCapture,
+        );
       },
     },
     {
@@ -174,23 +172,21 @@ var InfiniteScroll = (function(_Component) {
 
         var scrollEl = this.getScrollElement();
 
-        if (scrollEl) {
-          scrollEl.addEventListener(
-            'mousewheel',
-            this.mousewheelListener,
-            this.props.useCapture,
-          );
-          scrollEl.addEventListener(
-            'scroll',
-            this.scrollListener,
-            this.props.useCapture,
-          );
-          scrollEl.addEventListener(
-            'resize',
-            this.scrollListener,
-            this.props.useCapture,
-          );
-        }
+        scrollEl.addEventListener(
+          'mousewheel',
+          this.mousewheelListener,
+          this.props.useCapture,
+        );
+        scrollEl.addEventListener(
+          'scroll',
+          this.scrollListener,
+          this.props.useCapture,
+        );
+        window.addEventListener(
+          'resize',
+          this.scrollListener,
+          this.props.useCapture,
+        );
 
         if (this.props.initialLoad) {
           this.scrollListener();

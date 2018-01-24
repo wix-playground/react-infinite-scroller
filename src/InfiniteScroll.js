@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class InfiniteScroll extends Component {
@@ -83,12 +83,13 @@ export default class InfiniteScroll extends Component {
         this.scrollListener,
         this.props.useCapture,
       );
-      scrollEl.removeEventListener(
-        'resize',
-        this.scrollListener,
-        this.props.useCapture,
-      );
     }
+
+    window.removeEventListener(
+      'resize',
+      this.scrollListener,
+      this.props.useCapture,
+    );
   }
 
   attachScrollListener() {
@@ -109,12 +110,13 @@ export default class InfiniteScroll extends Component {
         this.scrollListener,
         this.props.useCapture,
       );
-      scrollEl.addEventListener(
-        'resize',
-        this.scrollListener,
-        this.props.useCapture,
-      );
     }
+
+    window.addEventListener(
+      'resize',
+      this.scrollListener,
+      this.props.useCapture,
+    );
 
     if (this.props.initialLoad) {
       this.scrollListener();
