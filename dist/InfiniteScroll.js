@@ -156,7 +156,7 @@ var InfiniteScroll = (function(_Component) {
           this.scrollListener,
           this.props.useCapture,
         );
-        scrollEl.removeEventListener(
+        window.removeEventListener(
           'resize',
           this.scrollListener,
           this.props.useCapture,
@@ -185,7 +185,7 @@ var InfiniteScroll = (function(_Component) {
           this.scrollListener,
           this.props.useCapture,
         );
-        scrollEl.addEventListener(
+        window.addEventListener(
           'resize',
           this.scrollListener,
           this.props.useCapture,

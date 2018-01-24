@@ -80,7 +80,7 @@ export default class InfiniteScroll extends Component {
       this.scrollListener,
       this.props.useCapture,
     );
-    scrollEl.removeEventListener(
+    window.removeEventListener(
       'resize',
       this.scrollListener,
       this.props.useCapture,
@@ -107,7 +107,7 @@ export default class InfiniteScroll extends Component {
       this.scrollListener,
       this.props.useCapture,
     );
-    scrollEl.addEventListener(
+    window.addEventListener(
       'resize',
       this.scrollListener,
       this.props.useCapture,
